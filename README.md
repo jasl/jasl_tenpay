@@ -19,12 +19,6 @@ see <https://github.com/jasl/tenpay_demo> .
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tenpay'
-```
-
-or development version
-
-```ruby
 gem 'tenpay', :github => 'jasl/tenpay'
 ```
 
