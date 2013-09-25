@@ -5,7 +5,7 @@ module Tenpay
   module Service
     GATEWAY_URL = 'https://gw.tenpay.com/gateway/pay.htm'
 
-    CREATE_INTERACTIVE_MODE_REQUIRED_OPTIONS = %w( body subject return_url notify_url partner out_trade_no total_fee fee_type spbill_create_ip )
+    CREATE_INTERACTIVE_MODE_REQUIRED_OPTIONS = %w( body subject return_url notify_url partner out_trade_no total_fee fee_type spbill_create_ip sign )
     def self.create_interactive_mode_url(options)
       options = {
           'input_charset' => 'UTF-8',
@@ -21,7 +21,7 @@ module Tenpay
     private
 
     def self.query_string(options)
-      options.merge('sign_type' => 'MD5', 'sign' => Tenpay::Sign.generate(options)).map do |key, value|
+      options.merge('sign' => Tenpay::Sign.generate(options)).map do |key, value|
         "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
       end.join('&')
     end

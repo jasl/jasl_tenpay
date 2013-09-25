@@ -6,7 +6,7 @@ class Tenpay::SignTest < Test::Unit::TestCase
       :service => 'test',
       :partner => '123'
     }
-    @sign = Digest::MD5.hexdigest("partner=123&service=test&key=#{Tenpay.key}")
+    @sign = Digest::MD5.hexdigest("partner=123&service=test&key=#{Tenpay.key}").upcase
   end
 
   def test_generate_sign

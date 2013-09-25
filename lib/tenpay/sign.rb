@@ -7,7 +7,11 @@ module Tenpay
         "#{key}=#{value}"
       end.join('&')
 
-      Digest::MD5.hexdigest("#{query}&key=#{Tenpay.key}")
+      Digest::MD5.hexdigest("#{query}&key=#{Tenpay.key}").upcase
+    end
+
+    def self.verify?(params)
+      false #TODO: impl this
     end
   end
 end
