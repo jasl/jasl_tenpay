@@ -7,5 +7,11 @@ module Tenpay
       end
       new_hash
     end
+
+    def self.make_query_string(options)
+      options.merge('sign' => Tenpay::Sign.generate(options)).map do |key, value|
+        "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
+      end.join('&')
+    end
   end
 end

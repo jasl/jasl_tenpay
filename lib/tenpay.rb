@@ -1,6 +1,7 @@
 require 'tenpay/utils'
 require 'tenpay/sign'
 require 'tenpay/service'
+require 'tenpay/notify'
 
 module Tenpay
   class<< self

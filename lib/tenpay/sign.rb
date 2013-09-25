@@ -11,7 +11,10 @@ module Tenpay
     end
 
     def self.verify?(params)
-      false #TODO: impl this
+      params = Utils.stringify_keys(params)
+      sign = params.delete('sign')
+
+      generate(params) == sign
     end
   end
 end

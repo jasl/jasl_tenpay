@@ -12,4 +12,12 @@ class Tenpay::SignTest < Test::Unit::TestCase
   def test_generate_sign
     assert_equal @sign, Tenpay::Sign.generate(@params)
   end
+
+  def test_verify_sign
+    assert Tenpay::Sign.verify?(@params.merge(:sign => @sign))
+  end
+
+  def test_verify_sign_when_fails
+    assert !Tenpay::Sign.verify?(@params.merge(:danger => 'danger', :sign => @sign))
+  end
 end
