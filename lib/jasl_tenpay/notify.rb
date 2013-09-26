@@ -1,4 +1,4 @@
-module Tenpay
+module JaslTenpay
   class Notify
     GATEWAY = 'https://gw.tenpay.com/gateway/simpleverifynotifyid.xml'
     SUCCESS_STR = '<retcode>0</retcode>'
@@ -7,7 +7,7 @@ module Tenpay
       if Sign.verify?(params)
         params = {
             'input_charset' => 'UTF-8',
-            'partner' => Tenpay.pid,
+            'partner' => JaslTenpay.pid,
             'notify_id' => CGI.escape(params[:notify_id].to_s)
         }
 

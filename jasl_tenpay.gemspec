@@ -1,10 +1,10 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "tenpay/version"
+require "jasl_tenpay/version"
 
 Gem::Specification.new do |s|
-  s.name          = "tenpay"
-  s.version       = Tenpay::VERSION
+  s.name          = "jasl_tenpay"
+  s.version       = JaslTenpay::VERSION
   s.authors       = ["Jasl"]
   s.email         = ["jasl9187@hotmail.com"]
   s.homepage      = "https://github.com/jasl/tenpay"

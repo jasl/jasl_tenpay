@@ -1,4 +1,4 @@
-# Tenpay
+# JaslTenpay
 
 A simple Tenpay ruby gem, without unnecessary magic or wraper, it's directly facing how Tenpay api works.
 copied from [alipay](https://github.com/chloerei/alipay) .
@@ -19,7 +19,13 @@ see <https://github.com/jasl/tenpay_demo> .
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tenpay', :github => 'jasl/tenpay'
+gem 'jasl_tenpay'
+```
+
+or development version
+
+```ruby
+gem 'jasl_tenpay', :github => 'jasl/tenpay'
 ```
 
 And then execute:
@@ -33,8 +39,8 @@ $ bundle
 ### Config
 
 ```ruby
-tenpay.pid = 'YOUR_PID'
-tenpay.key = 'YOUR_KEY'
+JaslTenpay.pid = 'YOUR_PID'
+JaslTenpay.key = 'YOUR_KEY'
 ```
 
 ### Generate payment url
@@ -50,7 +56,7 @@ options = {
   :notify_url        => 'YOUR_ORDER_NOTIFY_URL'  # http://knewone.com/orders/1/tenpay_notify
 }
 
-Tenpay::Service.create_interactive_mode_url(options)
+JaslTenpay::Service.create_interactive_mode_url(options)
 # => 'https://gw.tenpay.com/gateway/pay.htm?...'
 ```
 
@@ -65,7 +71,7 @@ read [Tenpay sdk doc](http://help.tenpay.com/mch/>) to get more options' details
 # The notify url MUST be set when generate payment url
 # IMPORTANT: Notify may reach earlier than callback
 def tenpay_notify
-  if Tenpay::Notify.verify? params.except(*request.path_parameters.keys)
+  if JaslTenpay::Notify.verify? params.except(*request.path_parameters.keys)
     # TODO: valid notify, code your business logic here.
     render text: 'success'
   else

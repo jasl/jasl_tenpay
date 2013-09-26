@@ -1,4 +1,4 @@
-module Tenpay
+module JaslTenpay
   module Utils
     def self.stringify_keys(hash)
       new_hash = {}
@@ -9,7 +9,7 @@ module Tenpay
     end
 
     def self.make_query_string(options)
-      options.merge('sign' => Tenpay::Sign.generate(options)).map do |key, value|
+      options.merge('sign' => JaslTenpay::Sign.generate(options)).map do |key, value|
         "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
       end.join('&')
     end

@@ -1,7 +1,7 @@
 require 'cgi'
 require 'open-uri'
 
-module Tenpay
+module JaslTenpay
   module Service
     GATEWAY_URL = 'https://gw.tenpay.com/gateway/pay.htm'
 
@@ -9,7 +9,7 @@ module Tenpay
     def self.create_interactive_mode_url(options)
       options = {
           'input_charset' => 'UTF-8',
-          'partner' => Tenpay.pid,
+          'partner' => JaslTenpay.pid,
           'fee_type' => '1'
       }.merge(Utils.stringify_keys(options))
 

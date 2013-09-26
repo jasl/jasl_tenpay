@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Tenpay::ServiceTest < Test::Unit::TestCase
+class JaslTenpay::ServiceTest < Test::Unit::TestCase
   def test_generate_create_interactive_mode_url
     options = {
         :body => 'test good',
@@ -11,6 +11,6 @@ class Tenpay::ServiceTest < Test::Unit::TestCase
         :total_fee => 1,
         :spbill_create_ip => '127.0.0.1',
     }
-    assert_not_nil Tenpay::Service.create_interactive_mode_url(options)
+    assert_not_nil JaslTenpay::Service.create_interactive_mode_url(options)
   end
 end
