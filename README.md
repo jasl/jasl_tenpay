@@ -51,7 +51,7 @@ options = {
   :subject           => 'YOUR_ORDER_SUBJECCT',   # Fitbit flex
   :body              => 'YOUR_ORDER_DESCRIPTION',# from knewone.com
   :total_fee         => 1,                       # price, unit: cent
-  :spbill_create_ip  => request.ip               # user ip
+  :spbill_create_ip  => request.ip,              # user ip
   :return_url        => 'YOUR_ORDER_RETURN_URL', # http://knewone.com/orders/1/tenpay_callback
   :notify_url        => 'YOUR_ORDER_NOTIFY_URL'  # http://knewone.com/orders/1/tenpay_notify
 }
