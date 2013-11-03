@@ -10,6 +10,10 @@ It contain this API:
 
 Please read Tenpay official document first: <http://help.tenpay.com/mch/> .
 
+## Why JaslTenpay?
+
+Cause [tenpay](https://github.com/yzhang/tenpay) has used and seems not maintain anymore.
+
 ## Demo
 
 see <https://github.com/jasl/tenpay_demo> .
