@@ -1,4 +1,4 @@
-# JaslTenpay
+# Jasl_Tenpay
 
 A simple Tenpay ruby gem, without unnecessary magic or wraper, it's directly facing how Tenpay api works.
 copied from [alipay](https://github.com/chloerei/alipay) .
@@ -10,7 +10,7 @@ It contain this API:
 
 Please read Tenpay official document first: <http://help.tenpay.com/mch/> .
 
-## Why JaslTenpay?
+## Why Jasl_Tenpay?
 
 Cause [tenpay](https://github.com/yzhang/tenpay) has used and seems not maintain anymore.
 
@@ -49,6 +49,8 @@ JaslTenpay.key = 'YOUR_KEY'
 
 ### Generate payment url
 
+e.g:
+
 ```ruby
 options = {
   :out_trade_no      => 'YOUR_ORDER_ID',         # 20130801000001
@@ -66,7 +68,7 @@ JaslTenpay::Service.create_interactive_mode_url(options)
 
 You can redirect user to this payment url, and user will see a payment page for his/her order.
 
-read [Tenpay sdk doc](http://help.tenpay.com/mch/>) to get more options' details.
+read [Tenpay integration guide](http://help.tenpay.com/mch/) to get more options.
 
 ### Verify notify
 
@@ -83,6 +85,8 @@ def tenpay_notify
   end
 end
 ```
+
+one more thing, you can give ```verify_trade_state: true``` like ```JaslTenpay::Notify.verify?(params, verify_trade_state: true)``` to verify payment success or not.
 
 ## Contributing
 
