@@ -12,7 +12,7 @@ Please read Tenpay official document first: <http://help.tenpay.com/mch/> .
 
 ## Why Jasl_Tenpay?
 
-Cause [tenpay](https://github.com/yzhang/tenpay) has used and seems not maintain anymore.
+Cause [tenpay](https://github.com/yzhang/tenpay) has been taken and seems not maintain anymore.
 
 ## Demo
 
