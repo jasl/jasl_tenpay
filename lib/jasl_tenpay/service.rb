@@ -5,7 +5,7 @@ module JaslTenpay
   module Service
     GATEWAY_URL = 'https://gw.tenpay.com/gateway/pay.htm'
 
-    CREATE_INTERACTIVE_MODE_REQUIRED_OPTIONS = %w(body subject return_url notify_url partner out_trade_no total_fee fee_type spbill_create_ip)
+    CREATE_INTERACTIVE_MODE_REQUIRED_OPTIONS = %w(body return_url notify_url partner out_trade_no total_fee fee_type spbill_create_ip)
     def self.create_interactive_mode_url(options)
       options = {
           'input_charset' => 'UTF-8',
