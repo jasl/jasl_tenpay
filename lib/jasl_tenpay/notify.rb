@@ -1,5 +1,5 @@
 module JaslTenpay
-  class Notify
+  module Notify
     GATEWAY = 'https://gw.tenpay.com/gateway/simpleverifynotifyid.xml'
     SUCCESS_STR = '<retcode>0</retcode>'
     TRADE_STATE_SUCCESS_STR = '<trade_state>0</trade_state>'
