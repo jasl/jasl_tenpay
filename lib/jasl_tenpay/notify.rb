@@ -5,20 +5,18 @@ module JaslTenpay
     TRADE_STATE_SUCCESS_STR = '<trade_state>0</trade_state>'
 
     def self.verify?(params)
-      result = fetch_trade_result(params)
+      result = fetch_raw_verify_notify(params)
 
       result && result.include?(SUCCESS_STR)
     end
 
     def self.verify_trade_success?(params)
-      result = fetch_trade_result(params)
+      result = fetch_raw_verify_notify(params)
 
       result && result.include?(SUCCESS_STR) && result.include?(TRADE_STATE_SUCCESS_STR)
     end
 
-    private
-
-    def self.fetch_trade_result(params)
+    def self.fetch_raw_verify_notify(params)
       return nil unless Sign.verify?(params)
 
       params = {
