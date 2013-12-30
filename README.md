@@ -68,7 +68,7 @@ JaslTenpay::Service.create_interactive_mode_url(options)
 
 You can redirect user to this payment url, and user will see a payment page for his/her order.
 
-read [Tenpay integration guide](http://help.tenpay.com/mch/) to get more options.
+read [Tenpay integration manual](http://help.tenpay.com/mch/) to get more options.
 
 ### Verify notify
 
@@ -86,7 +86,7 @@ def tenpay_notify
 end
 ```
 
-one more thing, you can give ```verify_trade_state: true``` like ```JaslTenpay::Notify.verify?(params, verify_trade_state: true)``` to verify payment success or not.
+PS: You can use ```JaslTenpay::Notify.verify_trade_success?(params)``` to verify payment success.
 
 ## Contributing
 

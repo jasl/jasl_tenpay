@@ -61,11 +61,11 @@ class JaslTenpay::NotifyTest < Test::Unit::TestCase
 
   def test_verify_notify_with_trade_state_when_success
     FakeWeb.register_uri(:get, @url, :body => SUCCESS_RETURN)
-    assert JaslTenpay::Notify.verify?(@options, verify_trade_state: true)
+    assert JaslTenpay::Notify.verify_trade_success?(@options)
   end
 
   def test_verify_notify_with_trade_state_when_fail
     FakeWeb.register_uri(:get, @url, :body => SUCCESS_BUT_TRADE_STATE_FAIL_RETURN)
-    assert !JaslTenpay::Notify.verify?(@options, verify_trade_state: true)
+    assert !JaslTenpay::Notify.verify_trade_success?(@options)
   end
 end
