@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_development_dependency "bundler"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "fakeweb"
+  s.add_development_dependency "bundler", '~> 1.3'
+  s.add_development_dependency "rake", '~> 10.1'
+  s.add_development_dependency "fakeweb", '~> 1.3'
 end
