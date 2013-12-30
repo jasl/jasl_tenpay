@@ -66,6 +66,8 @@ JaslTenpay::Service.create_interactive_mode_url(options)
 # => 'https://gw.tenpay.com/gateway/pay.htm?...'
 ```
 
+BTW: Wechat payment using the same api, addition needs provide argument ```:bank_type => 'WX'```
+
 You can redirect user to this payment url, and user will see a payment page for his/her order.
 
 read [Tenpay integration manual](http://help.tenpay.com/mch/) to get more options.
@@ -77,16 +79,14 @@ read [Tenpay integration manual](http://help.tenpay.com/mch/) to get more option
 # The notify url MUST be set when generate payment url
 # IMPORTANT: Notify may reach earlier than callback
 def tenpay_notify
-  if JaslTenpay::Notify.verify? params.except(*request.path_parameters.keys)
+  if JaslTenpay::Notify.verify?(params.except(*request.path_parameters.keys)) && callback_params[:trade_state] == '0'
     # TODO: valid notify, code your business logic here.
-    render text: 'success'
   else
-    render text: 'fail'
+    # TODO: invalid, something went wrong, handle it.
   end
+  render text: 'success'
 end
 ```
-
-PS: You can use ```JaslTenpay::Notify.verify_trade_success?(params)``` to verify payment success.
 
 ## Contributing
 
