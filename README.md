@@ -29,7 +29,7 @@ gem 'jasl_tenpay'
 or development version
 
 ```ruby
-gem 'jasl_tenpay', :github => 'jasl/tenpay'
+gem 'jasl_tenpay', :github => 'jasl/jasl_tenpay'
 ```
 
 And then execute:
